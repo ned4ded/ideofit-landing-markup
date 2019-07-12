@@ -46,6 +46,8 @@
   }
 
   &-phone-group {
+    display: inline-flex;
+
     @include input;
     @include scale(
       (
