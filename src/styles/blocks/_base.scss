@@ -1,3 +1,65 @@
-@import 'bricks/base';
-@import 'sections/base';
-@import 'layout/base';
+.logotype {
+  @include scale(
+    (
+      width: 204px,
+      height: 83px
+    )
+  );
+
+  display: inline-block;
+}
+
+.store-logotype {
+  @include scale(
+    (
+      width: 222px,
+      height: 70px
+    )
+  );
+}
+
+.link-dashed {
+  $border-width: 1px;
+
+  position: relative;
+
+  padding-bottom: 1px;
+
+  white-space: nowrap;
+  text-decoration: none;
+
+  color: $body-color;
+  border-bottom: $border-width dashed white;
+
+  font-weight: bold;
+
+  &::before {
+    position: absolute;
+    top: $border-width;
+    left: 0;
+
+    display: inline-block;
+
+    width: 0;
+    height: 100%;
+
+    content: "";
+    transition: width 0.1s ease-in;
+
+    border-bottom: $border-width solid white;
+  }
+
+  &:hover {
+    text-decoration: none;
+
+    color: $body-color;
+    text-shadow: 1px 1px darken(theme-color(), 20%);
+
+    &::before {
+      width: 100%;
+    }
+  }
+}
+
+@import "subscribe";
+@import "video";

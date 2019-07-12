@@ -1,7 +1,23 @@
-// Example:
-// @font-face {
-// 	font-family: 'Proxima Nova';
-// 	src: local('Proxima Nova Regular'), local('ProximaNova-Regular'), local('Proxima Nova'), local('ProximaNova'), url('../assets/fonts/ProximaNova-Regular.woff') format('woff');
-// 	font-weight: 400;
-// 	font-style: normal;
-// }
+@font-face {
+  font-family: "SF UI Display";
+  font-weight: 600;
+  font-style: normal;
+
+  src: local("SF UI Display Bold"), local("SFUIDisplayBold"), local("SFUIDisplay"), url("../assets/fonts/sf-ui-display-bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SF UI Text";
+  font-weight: 600;
+  font-style: normal;
+
+  src: local("SF UI Text Bold"), local("SFUITextBold"), local("SFUIText"), url("../assets/fonts/sf-ui-text-bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SF UI Text";
+  font-weight: 400;
+  font-style: normal;
+
+  src: local("SF UI Text Regular"), local("SFUITextRegular"), local("SFUIText"), url("../assets/fonts/sf-ui-text-regular.woff") format("woff");
+}

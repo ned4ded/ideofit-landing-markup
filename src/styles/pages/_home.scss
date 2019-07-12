@@ -1,0 +1,67 @@
+.page-home {
+  @include scale(
+    (
+      padding-top: 15px,
+      padding-bottom: 55px
+    )
+  );
+
+  display: flex;
+  align-items: center;
+
+  min-height: 100vh;
+
+  background-image: linear-gradient(200deg, #7a00ff, #620ac2);
+
+  &-header {
+    @include scale(
+      (
+        margin-bottom: 35px
+      )
+    );
+  }
+
+  &-heading {
+    letter-spacing: -1px;
+
+    font-family: $ff-display;
+    font-size: 64px;
+    font-weight: bold;
+    line-height: 1.09;
+
+    @include scale(
+      (
+        font-size: 100px,
+        margin-bottom: 11px
+      ),
+      false
+    );
+  }
+
+  &-sub-heading {
+    letter-spacing: -.36px;
+
+    line-height: 1.25;
+    margin-bottom: 25px;
+    font-size: 24px;
+
+    @include scale(
+      (
+        margin-bottom: 50px,
+        font-size: 36px
+      ),
+      false
+    );
+  }
+
+  &-jumbotron {
+    margin-top: 0;
+
+    @include scale(
+      (
+        margin-top: 64px
+      ),
+      false
+    );
+  }
+}

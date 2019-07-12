@@ -1,16 +1,67 @@
+
+$scales-up: (
+  lg : 0.4166,
+  xl : 0.65625,
+  2xl : 1
+);
+
+@function is-important($arg, $boolean) {
+  @if $boolean {
+    @return $arg !important;
+  }
+
+  @else {
+    @return $arg;
+  }
+}
+
+@mixin flatten-props($map, $cc: 1, $is-important: false) {
+  @each $prop, $v in $map {
+    @if type-of($v) == 'list' {
+
+      $list: $v;
+
+      @for $i from 1 through length($list) {
+        $cur: nth($list, $i);
+
+        $list: set-nth($list, $i, is-important($cur * $cc, $is-important));
+      }
+
+      #{ $prop } : $list;
+    }
+
+    @else {
+      #{ $prop } : is-important($v * $cc, $is-important);
+    }
+  }
+}
+
+@mixin scale($map, $is-from-start: true, $important: false) {
+
+  @if $is-from-start {
+    @include flatten-props($map, $is-important: $important);
+  }
+
+  @each $bp, $cc in $scales-up {
+    @include media-breakpoint-up($bp) {
+      @include flatten-props($map, $cc, $important);
+    }
+  }
+}
+
 // the original variables could be looked up here https://github.com/twbs/bootstrap/blob/v4-dev/scss/_variables.scss
 
 // Color system
 
 // $grays: ();
 
-// $primary:       $blue;
-// $secondary:     $gray-600;
+$primary:       #6e05e2;
+$secondary:     #ebdcfb;
 // $success:       $green;
 // $info:          $cyan;
 // $warning:       $yellow;
 // $danger:        $red;
-// $light:         $gray-100;
+$light:         #ceabf4;
 // $dark:          $gray-800;
 
 // $theme-colors: ();
@@ -54,8 +105,8 @@
 
 // Body
 
-// $body-bg:                   $white;
-// $body-color:                $gray-900;
+$body-bg:                   $primary;
+$body-color:                #fff;
 
 // Links
 
@@ -77,14 +128,18 @@ $grid-breakpoints: (
   sm: 576px,
   md: 768px,
   lg: 992px,
-  xl: 1260px
+  xl: 1260px,
+  2xl: 1600px
 );
 
 $container-max-widths: (
   sm: 540px,
   md: 720px,
-  lg: 960px,
-  xl: 1200px
+  lg: 560px,
+  // lg: 960px,
+  xl: 788px,
+  // xl: 1200px,
+  2xl: 1200px
 );
 //
 // $grid-columns:                12;
@@ -117,7 +172,7 @@ $container-max-widths: (
 
 // Fonts
 
-// $font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-sans-serif:      "SF UI Text", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 // $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 // $font-family-base:            $font-family-sans-serif;
 
@@ -269,7 +324,6 @@ $container-max-widths: (
 // $btn-border-radius-sm:        $border-radius-sm;
 
 // $btn-transition:              color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-
 
 // Forms
 
@@ -749,7 +803,6 @@ $container-max-widths: (
 
 // $list-group-action-active-color:    $body-color;
 // $list-group-action-active-bg:       $gray-200;
-
 
 // Image thumbnails
 

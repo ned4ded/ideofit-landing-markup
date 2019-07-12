@@ -16,7 +16,8 @@
 			"$variable"
 		],
 		[
-			"$extend"
+      "$extend",
+			"$include"
 		],
 		[
 			"position",
@@ -363,9 +364,6 @@
 			"font-emphasize-style",
 			"font-smooth",
 			"line-height"
-		],
-		[
-			"$include"
 		]
 	]
 }

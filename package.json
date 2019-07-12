@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
+    "stylelint-scss": "^3.9.1",
     "@babel/core": "^7.4.5",
     "@babel/plugin-proposal-class-properties": "^7.4.4",
     "@babel/preset-env": "^7.4.5",
