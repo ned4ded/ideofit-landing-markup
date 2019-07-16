@@ -1,6 +1,6 @@
 
 $scales-up: (
-  lg : 0.4166,
+  lg : 0.65625,
   xl : 0.65625,
   2xl : 1
 );
@@ -135,8 +135,9 @@ $grid-breakpoints: (
 $container-max-widths: (
   sm: 540px,
   md: 720px,
-  lg: 560px,
+  // lg: 560px,
   // lg: 960px,
+  lg: 786px,
   xl: 788px,
   // xl: 1200px,
   2xl: 1200px
