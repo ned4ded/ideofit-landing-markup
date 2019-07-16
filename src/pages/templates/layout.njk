@@ -15,14 +15,16 @@
   <meta property="og:url" content="{{ m.og.url }}" />
   <meta property="og:site_name" content="{{ m.og.site_name }}" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="{{ m.og.url + '/assets/imgs/placeholder@1200x630.png' }}" />
+  <meta property="og:image" content="{{ m.og.url + '/assets/images/logo.png' }}" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:description" content="{{ m.og.descr }}" />
+  <meta property="twitter:image" content="https://ideofit.me/assets/images/twitter-logo.png">
+  <meta name="twitter:card" content="summary_large_image">
   {% endif %}
 
   {% if m.favicon %}
-  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="shortcut icon" href="assets/files/favicon.ico">
   {% endif %}
 
   <link rel="stylesheet" href="css/main.css">
@@ -35,8 +37,20 @@
 
   {% block content %} {% endblock %}
 
-  <script src="js/vendor.js" charset="utf-8"></script>
-  <script src="js/main.js" charset="utf-8"></script>
+  {% block name %}
+
+  {% endblock %}
+
+  {# <script src="js/vendor.js" charset="utf-8"></script> #}
+  {# <script src="js/main.js" charset="utf-8"></script> #}
+
+  <script src="https://unpkg.com/imask"></script>
+  <script>
+    var phoneMask = IMask(
+      document.getElementById('phone-mask'), {
+        mask: '(000)000-00-00'
+      });
+  </script>
 
 </body>
 

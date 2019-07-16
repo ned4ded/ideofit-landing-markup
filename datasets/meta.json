@@ -1,14 +1,15 @@
 {
   "lang" : "en",
   "charset" : "utf-8",
-  "title" : "Placeholder Title",
-  "description" : "description",
-  "favicon" : false,
+  "title" : "Ideofit — Virtual try on solution for eyewear industry",
+  "description" : "Find perfect sunglasses with this free virtual try on app.",
+  "favicon" : true,
   "og" : {
-    "use" : false,
+    "use" : true,
+    "type": "website",
     "title" : "OG placeholder title",
-    "url" : "www.og-placeholder-url.com",
-    "site_name" : "og placeholder url",
-    "descr" : "og description"
+    "url" : "ideofit.me",
+    "site_name" : "Ideofit",
+    "descr" : "Virtual try on solution for eyewear industry"
   }
 }

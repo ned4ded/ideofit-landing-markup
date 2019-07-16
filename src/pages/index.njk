@@ -23,7 +23,7 @@
               </span>
 
               <span class="subscribe-phone-group">
-                <input class="subscribe-input subscribe-input-phone" type="phone" require>
+                <input id="phone-mask" class="subscribe-input subscribe-input-phone" type="phone" require>
 
                 <input type="submit" class="subscribe-submit" value="Send Link">
               </span>
@@ -42,11 +42,15 @@
         <div class="col-12 col-lg-5">
           <p class="text-center d-lg-none">Realtime try on preview</p>
           <div class="video mx-auto mr-lg-0 ml-lg-auto">
-            <video width="338" height="730" controls autoplay muted loop>
-              <source src="assets/files/preview.mp4" type="video/mp4">
+            <div class="video-inner">
+              <div class="video-mask">
+                <video width="338" height="730" controls autoplay muted loop>
+                  <source src="assets/files/preview.mp4" type="video/mp4">
 
-              <p>Sorry, your browser doesn't support the video element.</p>
-            </video>
+                  <p>Sorry, your browser doesn't support the video element.</p>
+                </video>
+              </div>
+            </div>
           </div>
         </div>
       </div>

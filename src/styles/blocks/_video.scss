@@ -27,9 +27,30 @@
 
       content: "";
 
-      background-image: url("../assets/images/iphone-cover.png");
+      background-image: url("../assets/images/iphone-cover-filled.png");
       background-repeat: no-repeat;
       background-size: contain;
+    }
+  }
+
+  .video-mask {
+    overflow: hidden;
+
+    border: 5px solid white;
+
+    @include bp-up(lg) {
+      border: none;
+      border-radius: #{$video-h * map-get($scales-up, lg) / 54px * 1%} / #{$video-w * map-get($scales-up, lg) / 54px * 1%};
+    }
+
+    @include bp-up(xl) {
+      border-radius: #{$video-h / 54px * 1%} / #{$video-w / 54px * 1%};
+    }
+  }
+
+  .video-inner {
+    @include bp-up(lg) {
+      padding: 5.8% 6.4%;
     }
   }
 
@@ -40,22 +61,5 @@
 
     width: 100%;
     height: auto;
-
-    border: 5px solid white;
-
-    @include bp-up(lg) {
-      padding: 5.8% 6.4%;
-
-      border: none;
-      border-radius: #{$video-h * map-get($scales-up, lg) / 54px * 1%} / #{$video-w * map-get($scales-up, lg) / 54px * 1%};
-    }
-
-    @include bp-up(xl) {
-      border-radius: #{$video-h * map-get($scales-up, xl) / 54px * 1%} / #{$video-w * map-get($scales-up, xl) / 54px * 1%};
-    }
-
-    @include bp-up(2xl) {
-      border-radius: #{$video-h / 54px * 1%} / #{$video-w / 54px * 1%};
-    }
   }
 }

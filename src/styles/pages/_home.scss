@@ -1,17 +1,15 @@
 .page-home {
-  @include scale(
-    (
-      padding-top: 15px,
-      padding-bottom: 55px
-    )
-  );
-
   display: flex;
   align-items: center;
 
   min-height: 100vh;
 
   background-image: linear-gradient(200deg, #7a00ff, #620ac2);
+
+  @include bp-up(xl) {
+    padding-top: 15px;
+    padding-bottom: 55px;
+  }
 
   &-header {
     @include scale(
@@ -39,7 +37,7 @@
   }
 
   &-sub-heading {
-    letter-spacing: -.36px;
+    letter-spacing: -0.36px;
 
     line-height: 1.25;
     margin-bottom: 25px;
