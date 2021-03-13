@@ -39,6 +39,6 @@
     "undertaker-registry": "^1.0.1",
     "webpack": "^4.35.3",
     "webpack-stream": "^5.2.1",
-    "xmldom": "^0.1.27"
+    "xmldom": "^0.5.0"
   }
 }
